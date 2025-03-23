@@ -9,6 +9,8 @@ import { LoggerModule } from './core/logger/logger.module';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ResponseTimeInterceptor } from './core/interceptor/response-time.interceptor';
 import { HealthModule } from './core/health/health.module';
+import { DynamodbModule } from './infrastructure/dynamodb/dynamodb.module';
+import { SqsModule } from './infrastructure/sqs/sqs.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { HealthModule } from './core/health/health.module';
     }),
     LoggerModule,
     HealthModule,
+    DynamodbModule,
+    SqsModule,
   ],
   providers: [
     {
