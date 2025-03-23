@@ -1,7 +1,1 @@
-# nestjs-boilerplate
-
-> Package 
-
-```bash 
-
-```
+# LocalStack Practice with nestjs application
