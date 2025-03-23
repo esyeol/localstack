@@ -21,6 +21,8 @@ $ git clone https://github.com/esyeol/localstack.git
 
 $ cd localstack
 
+$ cp .env.example .env.development 
+
 $ docker compose up 
 
 $ pnpm install 
