@@ -10,7 +10,10 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ResponseTimeInterceptor } from './core/interceptor/response-time.interceptor';
 import { HealthModule } from './core/health/health.module';
 import { DynamodbModule } from './infrastructure/dynamodb/dynamodb.module';
-import { SqsHandler } from './infrastructure/sqs/sqs.module';
+// import { SqsHandler } from './infrastructure/sqs/sqs.module';
+import { RegisterModule } from './domain/register/register.module';
+// import { SqsModule } from '@ssut/nestjs-sqs';
+import { PushModule } from './domain/push/push.module';
 
 @Module({
   imports: [
@@ -24,10 +27,13 @@ import { SqsHandler } from './infrastructure/sqs/sqs.module';
         return new DataSource(options).initialize();
       },
     }),
+
     LoggerModule,
     HealthModule,
     DynamodbModule,
-    SqsHandler,
+    // SqsHandler,
+    RegisterModule,
+    PushModule,
   ],
   providers: [
     {

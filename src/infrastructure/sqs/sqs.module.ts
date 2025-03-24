@@ -1,13 +1,12 @@
 import { Module } from '@nestjs/common';
-import { SqsProducerService } from './sqs-producer.service';
 import { ConfigService } from '@nestjs/config';
 import { ENV_CONFIG } from '../../core/helper/env-keys.const';
 
 /**
+ * not-use
  * @see https://github.com/ssut/nestjs-sqs
  */
 import { SqsModule } from '@ssut/nestjs-sqs';
-import { SqsConsumerService } from './sqs-consumer.service';
 
 @Module({
   imports: [
@@ -43,6 +42,7 @@ import { SqsConsumerService } from './sqs-consumer.service';
       inject: [ConfigService],
     }),
   ],
-  providers: [SqsProducerService, SqsConsumerService],
+  // providers: [SqsProducerService, SqsConsumerService],
+  // exports: [SqsProducerService, SqsConsumerService],
 })
 export class SqsHandler {}
